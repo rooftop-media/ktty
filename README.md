@@ -22,7 +22,7 @@ kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals
 
 kTTY's functionality is captured in 📄 `/ktty/ktty.js`,  which bundles: 
  - the <a href="https://github.com/rooftop-media/ktty/tree/main/graphics">Graphics Functions</a> ( 🗂 `/ktty/graphics/*`), and also 
- - the <a href="https://github.com/rooftop-media/ktty/tree/main/browser">Browser Functions ( 🗂 `/ktty/browser/*` ). 
+ - the <a href="https://github.com/rooftop-media/ktty/tree/main/browser">Browser Functions</a> ( 🗂 `/ktty/browser/*` ). 
 
 There's also a file for a series of tests, 📄 `/ktty/tests`,
 which doubles as a sort of educational demo of the stack. 
