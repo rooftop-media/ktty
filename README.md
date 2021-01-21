@@ -21,15 +21,15 @@
 kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
 Here's an index of KTTY's source code:     
-| Folder                       | Name                                                                                   | Description
-|------------------------------|----------------------------------------------------------------------------------------|-------------------------------------------------------|
-| 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                      | All of KTTY's functionality, bundled n exported! 🚢   |
-| 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon </a>.       | Text styling & formatting.                            |
-| 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen </a>.         | Tools to parse XML & XSS strings.                     |
-| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser </a>.     | Network tools to load TTML / TSS apps.                |
-| 🗂 `/ktty/tests/*`           | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 TestLab</a>.         | Test and demo KTTY's features.                        |
+| Folder                       | Name                                                                                 | Description
+|------------------------------|--------------------------------------------------------------------------------------|-------------------------------------------------------|
+| 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                    | All of KTTY's functions, bundled n exported! 🚢       |
+| 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon </a>.     | Style & format text.                                  |
+| 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen </a>.       | Parse XML & XSS strings.                              |
+| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser </a>.   | ...                                                   |
+| 🗂 `/ktty/tests/*`           | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 TestLab</a>.       | Test and demo KTTY's features.                        |
 
-Each folder has its own README, with more details on that section.
+Each folder has its own README, with more details on that section.  Click the links to check 'em out. 
 
 <br /><br />
 
@@ -37,7 +37,7 @@ Each folder has its own README, with more details on that section.
 
 <h4> 🐯  - How to use KTTY...</h4>
 
-
+<br />
 
 How to import KTTY:
 ```
@@ -63,6 +63,7 @@ var config  = {
 var my_text = ktty.Ribbon( config );
 
 //  Check the Ribbon docs for how to use yr Ribbon. 
+
 ```
 <br /><br />
 
@@ -78,6 +79,7 @@ my_xk.load_xml( "<div> Hello! <b>Welcome.</b> </div>" );
 my_xk.load_xss( 'b { color: "magenta"; font-weight: "bold"; }' );
 
 //  Check the xKitchen docs for how to use yr xkitchen. 
+
 ```
 <br /><br />
 
@@ -86,7 +88,8 @@ my_xk.load_xss( 'b { color: "magenta"; font-weight: "bold"; }' );
 How to use the Browser to load TTML & TSS...
 ```
 /**  1.  Create a new KTTY Browser.                */
-var my_browser   = ktty.browser();
+var browser   = ktty.browser();
+
 
 
 ```
