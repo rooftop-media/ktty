@@ -1,6 +1,6 @@
 <!-- Title -->
 <h1 align="center">
-  🖨   ◎ kTTY graphics  ◎   🖨
+  🎀 ◉ 🖨 ◎ kTTY graphics ◎ 🖨 ◉ 🎀 
 </h1>
 
 <!--  Subtitle -->
@@ -16,11 +16,11 @@
 
 
 
-<h2 align="center"> 🐯  - About kTTY's graphics.. - 🐯</h2>
+<h2 align="center"> 🎀  - About kTTY's graphics... - 🎀</h2>
 
-kTTY styles text terminal interfaces. The functions
-in this folder ( `/ktty/graphics/*` ) stylize & format text
-to make configurable text box elements.
+kTTY styles <a href="https://en.wikipedia.org/wiki/Text-based_user_interface" target="_blank">text terminal interfaces</a>.
+The functions in this folder ( `/ktty/graphics/*` ) stylize & format text
+to make lil text box elements, and position them nicely. 
 
 This functions are graphics processing logic -- like what 
 your browser uses to interpret CSS into beautiful web pages.  
