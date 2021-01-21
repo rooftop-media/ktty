@@ -64,6 +64,7 @@ var my_text = ktty.Ribbon( config );
 
 //  Check the Ribbon docs for how to use yr Ribbon. 
 ```
+<br /><br />
 
 
 
@@ -94,7 +95,6 @@ var my_browser   = ktty.browser();
 
 
 
-<br /><br />
 
 <h4> 🐯  - About the name...</h4>
 
@@ -104,16 +104,21 @@ kTTY is best described as "KitchenWare's Terminal Tools",
 even though the acronym doesn't quite match. 
 
 <br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
 
 
 
 
 
-<h2 align="center">  🖨 - 💻  - Some info about text terminals!!! - 💻 - 🖨 </h2>
+<h2 align="center">  🖨 - 💻  - Glossary of Useful Terms - 💻 - 🖨 </h2>
 
-<p> Text terminals and text terminal emulators... </p>
+Defining some relevant technical terms.  
 
-<i>todo: terminal & terminal emulator softwares, ANSI codes, brief history... etc.</i>
+The table bel is a glossary index.  Click
+
+| Term             | Definition                                | Wikipedia     |
+|------------------|-------------------------------------------|---------------|
+| Text terminal    | Any text
 
 <br /><br /><br /><br /><br />
 
