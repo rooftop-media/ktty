@@ -15,7 +15,6 @@
 
 
 
-
 <h2 align="center"> 🎀  - About kTTY's graphics... - 🎀</h2>
 
 kTTY styles <a href="https://en.wikipedia.org/wiki/Text-based_user_interface" target="_blank">text terminal interfaces</a>.
