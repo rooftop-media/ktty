@@ -23,7 +23,7 @@ kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals
 Here's an index of KTTY's source code:
 | Section                                                                            | Folder                       | Description
 |------------------------------------------------------------------------------------|------------------------------|-------------------------------------------------------|
-| <a href="#ktty-js">The ktty.js file</a>                                            | 📄 `/ktty/ktty.js`           | All of KTTY's functionality, bundled n exported! 🚢   |
+| The ktty.js file                                                                   | 📄 `/ktty/ktty.js`           | All of KTTY's functionality, bundled n exported! 🚢   |
 | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon </a>    | 🗂 `/ktty/Ribbon/*`          | Text styling & formatting.                            |
 | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen </a>      | 🗂 `/ktty/xk/*`              | Tools to parse XML & XSS strings.                     |
 | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser </a>  | 🗂 `/ktty/Browser/*`         | Network tools to load TTML / TSS apps.                |
