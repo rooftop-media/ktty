@@ -1,19 +1,6 @@
-/*  ktty – Scripting tools to use the Terminal! 
-           This file bundles all of KTTY's features. 
-	   [ art from ascii-art.de/ascii/c/cat.txt ]
+/*  ktty/graphics/index – An index of all graphic tools!
+
 */
-                                       //      _                ___       _.--.
-                                       //      \`.|\..----...-'`   `-._.-'_.-'`
-                                       //      /  ' `         ,       __.--'
-//  Importing file tools from node:    //      )/' _/     \   `-_,   /
-var fs  = require('fs');               //      `-'" `"\_  ,_.-;_.-\_ ',  
-                                       //          _.-'_./   {_.'   ; /   fsc/as
-                                       //        {_.-``-'         {_/
-
-
-/*  Import all KTTY files in these next ~100 line...                           */
-
-
 
 
 //  ☞  ☞  ☞  Methods from /graphics/ansi/
@@ -95,66 +82,43 @@ var _margin                 = require( __dirname + "/graphics/box/style/margin.j
 
 
 
-//  ☞  ☞  ☞  Methods from /browser/events/
+module.exports = class String {
 
-/**  Called in constructor, maps listeners to stdin.      */
-var _setup                  = require( __dirname + "/browser/events/setup.js");
-
-
-
-                                        //     |\      _,,,---,,_
-                                        //     /,`.-'`'    -.  ;-;;,_
-//  The KTTY class.                     //    |,4-  ) )-,_..;\ (  `'-'
-module.exports = class KTTY {           //   L'---''(_/--'  `-'\_)  fL
-    
-    //  constructor      --  Starting a KTTY session:
     constructor() {
-	
-	/**  These functions can be remapped!  :)   */
-	this.listeners       = {
-	    'text':  function(key) {},
-	    'any':   function(key) {},
-	    'up':    function() {},
-	    'down':  function() {},
-	    'left':  function() {},
-	    'right': function() {},
-	    'enter': function() {},
-	    'backspace': function() {},
-	}
-
-	/**  Map listeners to stdin.                */
-	this.setup();
-	
-    }
-    
-
-
-
-    /*
-          =  =     ANSI styling    =  =
-                                              */
-
-    /**  ANSI          --  Returns ANSI codes.                     */
-    get_ansi( category, value ) {
-	return _get_ansi( category, value );
+	this.text = "";	
     }
 
-    /**  COLOR         --  Returns ANSI format color code.         */
-    get_color( category, value ) {
-	return _get_color( category, value );
+    load_text( _text ) {
+	this.text = _text
     }
+
+
+
+
 
     /**  ansi          --  Applies ANSI around a string of text.   */
     ansi( config ) {
 	return _ansi( this, config );
     }
 
+    /**  get_ansi      --  Returns ANSI codes.                     */
+    get_ansi( category, value ) {
+	return _get_ansi( category, value );
+    }
+
+    /**  get_color     --  Returns ANSI format color code.         */
+    get_color( category, value ) {
+	return _get_color( category, value );
+    }
+
+
+
 
     /*
          =  =    inline formatting    =  =
                                               */
 
-    /**  inline_style  --  Returns text with box styles applied.   */
+    /**  inline        --  Returns text with inline styles applied.   */
     inline( config ) {
 	return _inline( this, config );
     }
@@ -236,21 +200,6 @@ module.exports = class KTTY {           //   L'---''(_/--'  `-'\_)  fL
     }
    
 
-
-
-    /*
-               =  =   Events   =  =
-                                          */
-
-    /**  set_up_input  --  Mapping important input listeners.  */
-    setup() {
-	return _setup( this.listeners );
-    }
-
-    /**  on            --  Map an event listener.              */
-    on( event_name, callback ) {
-	return this.listeners[ event_name ] = callback;
-    }
 
 }
 
