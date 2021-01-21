@@ -20,16 +20,16 @@
 
 kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
-kTTY's functionality is captured in 📄 `/ktty/ktty.js`.  
+Here's an index of KTTY's source code:
+| Section                                                                            | Folder                       | Description
+|------------------------------------------------------------------------------------|------------------------------|-------------------------------------------------------|
+| <a href="#ktty-js">The ktty.js file</a>                                            | 📄 `/ktty/ktty.js`           | All of KTTY's functionality, bundled n exported! 🚢   |
+| <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon </a>    | 🗂 `/ktty/Ribbon/*`          | Text styling & formatting.                            |
+| <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen </a>      | 🗂 `/ktty/xk/*`              | Tools to parse XML & XSS strings.                     |
+| <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser </a>  | 🗂 `/ktty/Browser/*`         | Network tools to load TTML / TSS apps.                |
+| <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 Lab</a>          | 🗂 `/ktty/Lab/*`             | Test or demo KTTY.                                    |
 
-The functions themselves can be organized into three folders:
-| Function section                                                                            | Associated folder            |
-|---------------------------------------------------------------------------------------------|------------------------------|
-| <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">Ribbon Functions</a>       | 🗂 `/ktty/Ribbon/*`          |
-| <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">Browser Functions</a>     | 🗂 `/ktty/Browser/*`         |
-| <a href="https://github.com/rooftop-media/ktty/tree/main/Tests">Tests</a>                   | 🗂 `/ktty/tests/*`           |
-
-Each folder has its own README, with more details on that section
+Each folder has its own README, with more details on that section.
 
 <br /><br />
 
@@ -60,7 +60,7 @@ even though the acronym doesn't quite match.
 
 
 
-<h2 align="center">  🖨 - 💻  - A quick background on text terminals... - 💻 - 🖨 </h2>
+<h2 align="center">  🖨 - 💻  - Some info about text terminals!!! - 💻 - 🖨 </h2>
 
 <p> Text terminals and text terminal emulators... </p>
 
