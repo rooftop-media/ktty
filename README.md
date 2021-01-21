@@ -34,7 +34,10 @@ which doubles as a sort of educational demo of the stack.
 Like this:
 ```
 var KTTY = require("ktty");
+var ktty = new KTTY();
 
+//
+ktty.
 ```
 
 
