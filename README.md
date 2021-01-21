@@ -20,14 +20,14 @@
 
 kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
-Here's an index of KTTY's source code:
-| Folder                       | Section                                                                            | Description
+Here's an index of KTTY's source code:     
+| Folder                       | Name                                                                               | Description
 |------------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------|
 | 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                  | All of KTTY's functionality, bundled n exported! 🚢   |
-| 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon </a>    | Text styling & formatting.                            |
-| 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen </a>      | Tools to parse XML & XSS strings.                     |
-| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser </a>  | Network tools to load TTML / TSS apps.                |
-| 🗂 `/ktty/Lab/*`             | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 Lab</a>          | Test or demo KTTY.                                    |
+| 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon </a>.   | Text styling & formatting.                            |
+| 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen </a>.     | Tools to parse XML & XSS strings.                     |
+| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser </a>. | Network tools to load TTML / TSS apps.                |
+| 🗂 `/ktty/Lab/*`             | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 KttyLab</a>.     | Test or demo KTTY.                                    |
 
 Each folder has its own README, with more details on that section.
 
