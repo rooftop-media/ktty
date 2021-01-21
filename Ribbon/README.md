@@ -8,40 +8,34 @@
   <i>kTTY's tools to turn text into tools!</i>
 </h3>
 
----
+---f
 
 <br /><br /><br /><br /><br />
 
 
 
 
-<h2 align="center"> 🎀  - KTTY's String class - 🎀</h2>
+<h2 align="center"> 🎀  - KTTY's Ribbon class - 🎀</h2>
 
-<h4>🎀 📖 About String </h4>
-This folder ( `/ktty/String/*` ) implements the JS class `String`. 
+<h4>🎀 📖 About Ribbon </h4>
+This folder ( `/ktty/Ribbon/*` ) implements the JS class `Ribbon`. 
 
-KTTY's `String` class manages a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">JS string</a>,
-as well as a series of "config" options, which can dictate how to stylize that string. 
+KTTY's `Ribbon` class manages a string of text, as well as a series 
+of "config" options, which can dictate how to stylize that string. 
 
-The String's style functions implement graphics processing logic -- 
+The Ribbon's style functions implement graphics processing logic -- 
 like what your browser uses to interpret CSS into beautiful web pages.  
 Except, of course, the browser can render *images* and other 
 elements with <a href="https://en.wikipedia.org/wiki/Dot_matrix#All_points_addressable" target="_blank">point-addressable</a> accuracy.
 Our terminal-based graphics are built with "character-addressable"
 <a href="https://en.wikipedia.org/wiki/Text_mode" target="_blank">text-mode</a> logic, on the other hand. 
 
-Use String like this:
-
-```
-var Strin
-
-```
 
 <br /><br />
 
 <h4>🎀 ⚙️ How it works </h4>
 
-kTTY's graphics functions are organized into **four sections**, 
+Ribbons can be rendered in **four ways**, 
 each of which vaguely build on each other. 
 
 Click a section name to jump to its description. 
