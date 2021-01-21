@@ -5,7 +5,7 @@
 
 <!--  Subtitle -->
 <h3 align="center">
-  <i>kTTY's tools to turn text into tools!</i>
+  <i>kTTY's tools to stylize strings of text!</i>
 </h3>
 
 <br /><br /><br /><br /><br />
