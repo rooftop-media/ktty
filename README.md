@@ -49,7 +49,7 @@ var ktty    = new KTTY();
 
 
 
-How to use Ribbon to style and format text...
+You can access Ribbon through...
 ```
 /**  1.  Make a "CSS-like" config object.      */
 var config  = {
