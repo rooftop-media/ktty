@@ -40,7 +40,7 @@ Click a section name to jump to its description.
 
 <br />
 
-1. 🖍 <a href="#ansi">ANSI text styling</a> which includes:
+1. 📝 <a href="#inline">ANSI text styling</a> which includes:
    - Get color codes compatible with your terminal. 
    - Get codes to change text color & text background color. 
    - Get codes to style text -- bold, underline, dim, reverse-video, etc. 
@@ -48,14 +48,14 @@ Click a section name to jump to its description.
 
 <br />
 
-2. 📝 <a href="#inline">Inline text formatting</a>, which includes:
+2. 📦 <a href="#box">Box text formatting</a>, which includes:
    - Get values for viewport-relative length units `vw` and `vh`.
    - Apply word-wrap to text, given some width.  Justify text as it's wrapped. 
    - Align text left, right, or center. 
    
 <br />
   
-3. 📦 <a href="#box">Box text formatting</a>, which includes:
+3. 🖼 <a href="#frmae">Frame text formatting</a>, which includes:
    - Pad around a text box.  
    - Add a border.
    - Add a margin.
@@ -75,23 +75,17 @@ Click a section name to jump to its description.
 
 <h2 align="center"> ☟ - kTTY Function Descriptions,  by section - ☟ </h2>
 
-As a recap, kTTY function sections are:
- 1. 🖍 <a href="#ansi">ANSI text styling</a>
- 2. 📝 <a href="#inline">Inline text formatting</a>
- 3. 📦 <a href="#box">Box text formatting</a>
- 4. 🍱 <a href="#display">Display text boxes</a> 
- 5. 📅 <a href="#events">Terminal Events</a>
 
 <br /><br /><br /><br /><br />
 
 
-<!----                                ---->
-<!--   SECTION 1: ANSI Text Functions   -->
-<!----                                ---->
-<h4 id="ansi" align="center"> 1. 🖍  ANSI text styling functions: </h4>
+<!----                                 ---->
+<!--   SECTION 1: Inline text styling.   -->
+<!----                                 ---->
+<h4 id="inline" align="center"> 1. 📝  Inline text styling functions: </h4>
 
-The ANSI section applies <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank">ANSI escape codes</a> around text, 
-to change the text's display settings -- text color, bold, dim, etc. 
+The inline section applies <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank">ANSI escape codes</a> 
+around text, to change the text's display settings -- text color, bold, dim, etc. 
 
 Different terminal emulators support different ANSI codes, and different color codes.   
 We'll resolve those here too. 
