@@ -20,7 +20,12 @@
 
 kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
-kTTY's functions are organized into **four sections**.  Click a section name to jump to its description. 
+kTTY's functionality is captured in 📄 `/ktty/ktty.js`, which bundles
+all the Graphics Functions ( 🗂 `/ktty/graphics/*`) and also
+all the Browser Functions ( 🗂 `/ktty/browser/*` ). 
+
+There's also a file for a series of tests, 📄 `/ktty/tests`,
+which doubles as a sort of educational demo of the stack. 
 
 <br />
 
