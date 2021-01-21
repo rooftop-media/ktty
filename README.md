@@ -20,16 +20,20 @@
 
 kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
-kTTY's functionality is captured in 📄 `/ktty/ktty.js`,  which bundles: 
- - the <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">Ribbon Functions</a> ( 🗂 `/ktty/Ribbon/*`), and also 
- - the <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">Browser Functions</a> ( 🗂 `/ktty/Browser/*` ). 
+kTTY's functionality is captured in 📄 `/ktty/ktty.js`.  
 
-There's also a file for a series of tests, 📄 `/ktty/tests`,
-which doubles as a sort of educational demo of the stack. 
+The functions themselves can be organized into three folders:
+| Function section                                                                            | Associated folder            |
+|---------------------------------------------------------------------------------------------|------------------------------|
+| <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">Ribbon Functions</a>       | 🗂 `/ktty/Ribbon/*`          |
+| <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">Browser Functions</a>     | 🗂 `/ktty/Browser/*`         |
+| <a href="https://github.com/rooftop-media/ktty/tree/main/Tests">Tests</a>                   | 🗂 `/ktty/tests/*`           |
+
+Each folder has its own README, with more details on that section
 
 <br /><br />
 
-<h4> 🐯  - How to use...</h4>
+<h4> 🐯  - How to use KTTY...</h4>
 
 Like this:
 ```
