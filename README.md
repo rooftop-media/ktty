@@ -33,16 +33,65 @@ Each folder has its own README, with more details on that section.
 
 <br /><br />
 
+
+
 <h4> 🐯  - How to use KTTY...</h4>
 
-Like this:
-```
-var KTTY = require("ktty");
-var ktty = new KTTY();
 
-//
-ktty.
+
+How to import KTTY:
 ```
+//  Import KTTY like this. 
+var KTTY    = require("ktty");
+var ktty    = new KTTY();
+```
+<br /><br />
+
+
+
+How to use Ribbon to style and format text...
+```
+/**  1.  Make a "CSS-like" config object.      */
+var config  = {
+  text:       "Hello world!",
+  color:      "magenta",
+  width:      "100vw",
+  text_align: "center"
+}
+
+/**  2.  Create text with Ribbon.              */
+var my_text = ktty.Ribbon( config );
+
+//  Check the Ribbon docs for how to use yr Ribbon. 
+```
+
+
+
+How to use xKitchen to parse your xml and xss...
+```
+/**  1.  Create a new xKitchen.                */
+var my_xk   = ktty.xk();
+
+/**  2.  Load in XML and XSS.                  */
+my_xk.load_xml( "<div> Hello! <b>Welcome.</b> </div>" );
+my_xk.load_xss( 'b { color: "magenta"; font-weight: "bold"; }' );
+
+//  Check the xKitchen docs for how to use yr xkitchen. 
+```
+<br /><br />
+
+
+
+How to use the Browser to load TTML & TSS...
+```
+/**  1.  Create a new KTTY Browser.                */
+var my_browser   = ktty.browser();
+
+
+```
+<br /><br />
+
+
 
 
 <br /><br />
