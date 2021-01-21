@@ -62,7 +62,7 @@ function part_1() {
     about     += " 6. text-decoration: \"normal\" | \"underlined\"\n";
     about     += " 7. reverse-video:   \"yes-please\" | \"no-thanks\"\n\n";
     
-    about     += ktty.get_ansi("brightness", "normal");
+    about     += ktty.ansi("brightness", "normal");
 
     console.log( about );
 
