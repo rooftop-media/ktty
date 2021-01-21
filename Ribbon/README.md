@@ -1,6 +1,6 @@
 <!-- Title -->
 <h1 align="center">
-  🎀 ◉ 🖨 ◎ kTTY String Formatter ◎ 🖨 ◉ 🎀 
+  🎀 ◉ 🖨 ◎ Ribbon ◎ 🖨 ◉ 🎀 
 </h1>
 
 <!--  Subtitle -->
@@ -15,18 +15,31 @@
 
 
 
-<h2 align="center"> 🎀  - About the graphics... - 🎀</h2>
+<h2 align="center"> 🎀  - KTTY's String class - 🎀</h2>
 
-kTTY styles <a href="https://en.wikipedia.org/wiki/Text-based_user_interface" target="_blank">text terminal interfaces</a>.
-The functions in this folder ( `/ktty/graphics/*` ) stylize & format text
-to make lil text box elements, and position them nicely. 
+<h4>🎀 📖 About String </h4>
+This folder ( `/ktty/String/*` ) implements the JS class `String`. 
 
-This functions are graphics processing logic -- like what 
-your browser uses to interpret CSS into beautiful web pages.  
-Except, of course, the browser can render images and other 
+KTTY's `String` class manages a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">JS string</a>,
+as well as a series of "config" options, which can dictate how to stylize that string. 
+
+The String's style functions implement graphics processing logic -- 
+like what your browser uses to interpret CSS into beautiful web pages.  
+Except, of course, the browser can render *images* and other 
 elements with <a href="https://en.wikipedia.org/wiki/Dot_matrix#All_points_addressable" target="_blank">point-addressable</a> accuracy.
 Our terminal-based graphics are built with "character-addressable"
 <a href="https://en.wikipedia.org/wiki/Text_mode" target="_blank">text-mode</a> logic, on the other hand. 
+
+Use String like this:
+
+```
+var Strin
+
+```
+
+<br /><br />
+
+<h4>🎀 ⚙️ How it works </h4>
 
 kTTY's graphics functions are organized into **four sections**, 
 each of which vaguely build on each other. 
