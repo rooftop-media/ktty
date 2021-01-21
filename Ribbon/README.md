@@ -8,8 +8,6 @@
   <i>kTTY's tools to turn text into tools!</i>
 </h3>
 
----f
-
 <br /><br /><br /><br /><br />
 
 
