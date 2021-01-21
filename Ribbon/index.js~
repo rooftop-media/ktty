@@ -1,0 +1,72 @@
+/*  ktty/String/index  -  A class to manage a stylizable string.   */
+
+
+/**  First, let's import all the styling functions String can do.  */
+
+
+//  ☞  Methods from /String/ansi/
+
+/**  ansi   -  Apply ANSI codes around some string.   */
+var _ansi                   = require( __dirname + "/String/ansi/index.js" );
+
+
+
+//  ☞  Methods from /String/inline/
+
+/**  inline  -  Apply any inline style to a string.    */
+var _inline                 = require( __dirname + "/String/inline/index.js" );
+
+
+
+//  ☞  Methods from /String/box/
+
+/**  box     -  Apply any box style!       */
+var _box                    = require( __dirname + "/String/box/style.js" );
+
+
+//  ☞  Methods from /String/display/
+
+
+
+
+
+module.exports = class String {
+
+    /**  Making a new string....         */
+    constructor() {
+	this.text = "";	
+    }
+
+    /**  Load in new text.  Exciting!    */
+    load_text( _text ) {
+	this.text = _text
+    }
+
+    //  Apply certain sections of formatting:
+
+    /**  inline        --  Returns text styled with ANSI codes.   */
+    inline( config ) {
+	return _inline( this, config );
+    }
+
+
+    /*
+           =  =   box formatting   =  =
+                                               */
+
+   
+
+
+}
+
+
+/*
+
+    )   _. mmeeoowwrr!
+   (___)''
+   / ,_,/
+  /'"\ )\
+
+itz
+
+ */
