@@ -16,20 +16,16 @@
 <h2 align="center"> 🎀  - KTTY's Ribbon class - 🎀</h2>
 
 <h4>🎀 📖 About Ribbon </h4>
-This folder ( `/ktty/Ribbon/*` ) implements the JS class `Ribbon`. 
+`Ribbon` is a datatype -- like a number, or a string, but with
+more options, including styling & formatting. 
 
-KTTY's `Ribbon` class manages a string of text, as well as a series 
-of "config" options, which can dictate how to stylize that string. 
-
-The Ribbon's style functions implement graphics processing logic -- 
-like what your browser uses to interpret CSS into beautiful web pages.  
-Except, of course, the browser can render *images* and other 
-elements with <a href="https://en.wikipedia.org/wiki/Dot_matrix#All_points_addressable" target="_blank">point-addressable</a> accuracy.
-Our terminal-based graphics are built with "character-addressable"
-<a href="https://en.wikipedia.org/wiki/Text_mode" target="_blank">text-mode</a> logic, on the other hand. 
-
+Ribbons have:
+ - Text content
+ - Style settings, in a CSS-like format (to apply to the text content)
 
 <br /><br />
+
+
 
 <h4>🎀 ⚙️ How it works </h4>
 
