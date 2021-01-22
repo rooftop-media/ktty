@@ -32,7 +32,9 @@ Ribbons have:
 
 <h4>🎀 ⚙️ How it works </h4>
 
-Ribbons have over 20 style attributes that can be applied.  
+Load text into a ribbon, add a "config" file in to style the text. 
+
+There are over 20 attributes that can be applied to a text box. 
 These "style attributes" correspond to TSS -- KitchenWare's
 text-mode version of CSS. 
 
@@ -45,31 +47,13 @@ Click on a category name to jump to its section in this readme.
 
 <br />
 
-1. 📝 <a href="#inline">Inline text styling</a> which includes:
-   - Get color codes compatible with your terminal. 
-   - Get codes to change text color & text background color. 
-   - Get codes to style text -- bold, underline, dim, reverse-video, etc. 
-   - Function to add style codes before/after a string. 
+1. 📝 <a href="#inline">Inline</a> -- styling text by adding ANSI style codes. 
 
-<br />
+2. 📦 <a href="#box">Box</a> -- format text so it fits nicely in a box.
+     
+3. 🖼 <a href="#frmae">Frame</a> -- add padding, a border, and margins around your box. 
 
-2. 📦 <a href="#box">Box text formatting</a>, which includes:
-   - Get values for viewport-relative length units `vw` and `vh`.
-   - Apply word-wrap to text, given some width.  Justify text as it's wrapped. 
-   - Align text left, right, or center. 
-   
-<br />
-  
-3. 🖼 <a href="#frmae">Frame text formatting</a>, which includes:
-   - Pad around a text box.  
-   - Add a border.
-   - Add a margin.
-   - Resize for the "border-box" option.
-   
-<br />
-
-4. 🍱 <a href="#display">Display text boxes</a> together in a container 
-   - Block, flex, or grid layouts!  
+4. 🍱 <a href="#display">Display</a> -- display boxes together in a container box.
    
 <br />
 
@@ -98,9 +82,9 @@ We'll resolve those here too.
 In the folder 🗂 ktty/methods/ansi/
 | Method File        | Method Name                                                     | Description                                                              |
 |--------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------|
-| 📄 /get.js         | <a href="#get-ansi">`ktty.get_ansi( category, value )`</a>      | Get ANSI codes, for style & tty event codes                              | 
-| 📄 /color.js       | <a href="#get-color">`ktty.get_color( color_string )`</a>       | Get ANSI compatible color codes from `rgb(<0-255>, <0-255>, <0-255>)`    |
-| 📄 /style.js       | <a href="#ansi-style">`ktty.ansi_style( config )`</a>           | Apply ANSI styling to a string.                                          |
+| 📄 /get.js         | <a href="#get-ansi">`ribbon.get_ansi( category, value )`</a>      | Get ANSI codes, for style & tty event codes                              | 
+| 📄 /color.js       | <a href="#get-color">`ribbon.get_color( color_string )`</a>       | Get ANSI compatible color codes from `rgb(<0-255>, <0-255>, <0-255>)`    |
+| 📄 /style.js       | <a href="#ansi-style">`ribbon.ansi( config )`</a>           | Apply ANSI styling to a string.                                          |
 
 <br /><br /><br /><br /><br />
 
@@ -108,7 +92,7 @@ In the folder 🗂 ktty/methods/ansi/
 
 
 <!--   1.1.  GET ANSI       -->
-<h4 align="center" id="get-ansi"> `ktty.get_ansi( category, value )` --- 📄 ktty/methods/ansi/get.js </h4>
+<h4 align="center" id="get-ansi"> `ribbon.get_ansi( category, value )` --- 📄 ktty/methods/ansi/get.js </h4>
 
 This one gives you the actual ANSI codes themselves, as escaped strings. 
 
@@ -123,7 +107,7 @@ to **bold**, _italic_, different colors, etc.  ANSI is like the original markup 
 
 
 <!--   1.2.  GET COLOR      -->
-<h4 align="center" id="get-color"> `ktty.get_color( color_string )` --- 📄 ktty/methods/ansi/color.js </h4>
+<h4 align="center" id="get-color"> `ribbon.get_color( color_string )` --- 📄 ktty/methods/ansi/color.js </h4>
 
 ANSI colors are used when changing the background or text draw color. 
 
@@ -137,7 +121,7 @@ text strings to an ANSI format compatible with the runnimg machine.
 
 
 <!--   1.3.  ANSI STYLE     -->
-<h4 align="center" id="ansi-style"> `ktty.ansi_style( config )` --- 📄 ktty/methods/ansi/style.js </h4>
+<h4 align="center" id="ansi-style"> `ribbon.ansi( config )` --- 📄 ktty/methods/ansi/style.js </h4>
 
 Apply ANSI styling around a string of text, reset the style afterwards. 
 
@@ -166,7 +150,7 @@ The `/inline/` folder's functions all take a text string, and styling config opt
 In the folder 🗂 ktty/methods/inline/
 | Method File       | Method Name                                                | Description                                                              |
 |-------------------|------------------------------------------------------------|--------------------------------------------------------------------------|
-| 📄 style.js       | <a href="#inline-style">`inline_style( config ) `</a>      | Apply inline styles.                                                     |
+| 📄 style.js       | <a href="#inline-style">`inline( config ) `</a>      | Apply inline styles.                                                     |
 
 In the folder 🗂 ktty/methods/inline/style/
 | Method File       | Method Name                                                | Description                                                              |
@@ -189,17 +173,17 @@ Okay let's look at all those functions. 🦆
 
 
 
-<h4 align="center" id="inline-style"> `ktty.inline_style( config )` --- 📄 ktty/methods/inline/style.js </h4>
+<h4 align="center" id="inline-style"> `ribbon.inline( config )` --- 📄 ktty/methods/inline/style.js </h4>
 
  ⇢ All the styling from the functions in the folder `/inline/style/` 
- can be applied through the method `xk.inline_style( config )`.
+ can be applied through the method `xk.inline( config )`.
  
- The script for `inline_style( config )` is written in the file `/inline/style.js`.
+ The script for `inline( config )` is written in the file `/inline/style.js`.
 
 Here's a list of the config's fields and values:
 
  - 1 . text:            - `<string>` (The only required field),
- - 2 thru 7 . ANSI      - All the config options from <a href="#ansi-style">ktty.ansi_style( config )</a>, defined above. 
+ - 2 thru 7 . ANSI      - All the config options from <a href="#ansi-style">ribbon.ansi( config )</a>, defined above. 
  - 8 . white-space:     - "normal" | "nowrap" | "pre" | "pre-wrap"
  - 9 . width:           - "`<int>`sp" | "`<int>`vw" | "auto"
  - 10 . box-sizing      - Doesn't do anything yet, but its space here is important. 
@@ -207,7 +191,7 @@ Here's a list of the config's fields and values:
  - 12 . text-align:     - "left" | "center" | "right"
  - 13 . text-justify:   - "none" | "inter-word" | "inter-character"
  
-Inside `ktty.inline_style( config )`, each of these attribute's style
+Inside `ribbon.inline( config )`, each of these attribute's style
 is applied one after another, in an assembly line fashion. 🤖
 
 The **order does matter** for this implementation.
@@ -216,7 +200,7 @@ The **order does matter** for this implementation.
 
 
 
-<h4 align="center" id="wrap"> `ktty.wrap( config )` --- 📄 ktty/methods/inline/style/wrap.js </h4>
+<h4 align="center" id="wrap"> `ribbon.wrap( config )` --- 📄 ktty/methods/inline/style/wrap.js </h4>
 
 Pass in a config that looks like this:
 ```
@@ -225,7 +209,7 @@ var wrap_config = {
   width: "10sp"
   word_wrap: "break-word" 
 }
-var wrapped_string = ktty.wrap( wrap_config );
+var wrapped_string = ribbon.wrap( wrap_config );
 ```
 ... and `console.log( wrapped_string )` will look like this:
 
@@ -250,7 +234,7 @@ viewport!!
 
 
 
-<h4 align="center" id="align"> `ktty.align( config )` --- 📄 ktty/methods/inline/style/align.js </h4>
+<h4 align="center" id="align"> `ribbon.align( config )` --- 📄 ktty/methods/inline/style/align.js </h4>
 
 Align text handles 
 
@@ -261,7 +245,7 @@ var align_config = {
   width: "10sp"
   word_wrap: "break-word" 
 }
-var wrapped_string = ktty.wrap( wrap_config );
+var wrapped_string = ribbon.wrap( wrap_config );
 ```
 
 <br /><br /><br />
@@ -271,7 +255,7 @@ var wrapped_string = ktty.wrap( wrap_config );
 
 
 
-<h4 align="center" id="get-length"> `ktty.get_length( length_string )` --- 📄 ktty/methods/inline/get/length.js </h4>
+<h4 align="center" id="get-length"> `ribbon.get_length( length_string )` --- 📄 ktty/methods/inline/get/length.js </h4>
 
 <i>todo: write description here...</i>
 
@@ -279,7 +263,7 @@ var wrapped_string = ktty.wrap( wrap_config );
 
 
 
-<h4 align="center" id="get-width"> `ktty.get_color( string )` --- 📄 ktty/methods/inline/get/width.js </h4>
+<h4 align="center" id="get-width"> `ribbon.get_color( string )` --- 📄 ktty/methods/inline/get/width.js </h4>
 
 <i>todo: write description here...</i>
 
@@ -305,13 +289,13 @@ The `/frame/` folder's functions all take a text string, and styling config opti
 In the folder 🗂 ktty/methods/frame/
 | Method File      | Method Name                                                     | Description                                                      |
 |------------------|-----------------------------------------------------------------|------------------------------------------------------------------|
-| 📄 style.js.     | <a href="#box-style">`box_style( config )`</a>                  | Apply all styling in order, to make a text box!                  | 
+| 📄 style.js.     | <a href="#box-style">`box( config )`</a>                  | Apply all styling in order, to make a text box!                  | 
 
 
 In the folder 🗂 ktty/methods/box/style/      
 | Method File      | Method Name                                                     | Description                                                      |
 |------------------|-----------------------------------------------------------------|------------------------------------------------------------------|
-| 📄 style.js.     | <a href="#box-style">`box_style( config )`</a>                  | Apply all styling in order, to make a text box!                  | 
+| 📄 style.js.     | <a href="#box-style">`box( config )`</a>                  | Apply all styling in order, to make a text box!                  | 
 | 📄 frame.js      | <a href="#frame">`frame( config )`</a>                          | Utility used in pad, border & margin.                            |
 | 📄 pad.js        | <a href="#pad">`pad( config )`</a>                              | Add padding around text of some height & width.                  | 
 | 📄 border.js.    | <a href="#border">`border( config )`</a>                        | Add a border of box characters.                                  | 
@@ -327,9 +311,9 @@ In the folder 🗂 ktty/methods/box/get/
 
 <br /><br />
 
-<h4 align="center" id="box-style"> `ktty.box_style( config )` --- 📄 ktty/methods/box/style.js </h4>
+<h4 align="center" id="box-style"> `ribbon.box( config )` --- 📄 ktty/methods/box/style.js </h4>
 
-The options for the `box_style()` config include:
+The options for the `box()` config include:
 
  - 1 . thru 12.  Everything from the config file of `inline_box()`
  - 13 . box-sizing:   "content-box" | "border-box"
@@ -360,7 +344,7 @@ The methods in `/ktty/methods/display/` all take 2 arguments:
 A JS config for the parent element, and an array of configs for the children. 
 
 Each element in the array of child JS config objects may have:  
- - 1 . thru 16 .       Any options that would work for box_style( config )     
+ - 1 . thru 16 .       Any options that would work for box( config )     
  - 17 .  position:    "box" | "inline" | "absolute" | "relative"  
  - 18 .  top:         `<int>`sp | `int`vh  
  - 19 .  right:       `<int>`sp | `int`vw  
@@ -368,7 +352,7 @@ Each element in the array of child JS config objects may have:
  - 21 .  left:        `<int>`sp | `int`vw  
 
 The single config object for the *parent* element may have:  
-   1. thru 16.        Any options that would work for box_style( config ).   
+   1. thru 16.        Any options that would work for box( config ).   
    17.  thru 21.     Any option that would work for a child.   
    22.  display:     "flow" | "flex" | "grid"   
 
