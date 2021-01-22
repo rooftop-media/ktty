@@ -26,7 +26,7 @@ Here's an index of KTTY's source code:
 | 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                    | All of KTTY's functions, bundled n exported! 🚢       |
 | 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon</a>.      | Style & format text.                                  |
 | 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen</a>.        | Parse XML & XSS strings.                              |
-| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser</a>.    | ...                                                   |
+| 🗂 `/ktty/browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/browser">🌐 Browser</a>.    | T                                                     |
 | 🗂 `/ktty/tests/*`           | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 TestLab</a>.       | Test and demo KTTY's features.                        |
 
 Each folder has its own README, with more details on that section.  Click the links to check 'em out. 
@@ -50,19 +50,22 @@ var ktty    = new KTTY();
 
 How to set up Ribbon...
 ```
-/**  1.  Make a "CSS-like" config object.      */
+/**  1.  Import Ribbon.                        */ 
+var Ribbon    = require("Ribbon");
+
+/**  2.  Make an instance, add text.           */
+var ribbon    = new Ribbon();
+ribbon.add_text("Hello world!");
+
+/**  3.  Make a css-like style config.         */
 var config  = {
-  text:       "Hello world!",
   color:      "magenta",
   width:      "100vw",
   text_align: "center"
 }
 
-/**  2.  Create text with Ribbon.              */
-var my_text = ktty.Ribbon( config );
-
-//  Check the Ribbon docs for how to use yr Ribbon. 
-
+/**  4.  Apply the styles.              */
+var my_text = ribbon.style( config );
 ```
 <br /><br />
 
