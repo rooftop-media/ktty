@@ -1,0 +1,30 @@
+/*  ribbon/methods/display.js  -  Bundle & apply all text styles.  */
+
+var _inline_style    = require ( __dirname + "/inline/style.js" );
+
+module.exports = function display( ribbon ) {
+    
+    //  ~~ ☞  Route based on the display type. 
+
+    /**  The display type.  By default, "inline".                   */
+    var _display       = ribbon.display ? ribbon.display : "inline";
+
+    console.log(_display);
+
+    if      ( _display == "inline" ) {
+
+	var inline_text = _inline_style( ribbon );
+	return inline_text;
+
+    }
+
+    else if ( _display == "block" ) {
+
+    }
+
+    else if ( _display == "flex" ) {
+
+    }
+
+
+}

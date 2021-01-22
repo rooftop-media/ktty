@@ -1,0 +1,16 @@
+p {
+  display: block;
+  color: green;
+}
+
+a {
+  color: cyan;
+  font-weight: bold;
+}
+
+.special {
+  background: cyan;
+  color: magenta;
+  padding: 0sp 2sp;
+  border: 2sp solid red;
+}
