@@ -34,7 +34,7 @@ Ribbons have:
 
 Load text into a ribbon, add a "config" file in to style the text. 
 
-Ribbons have over 20 style attributes that can be applied.  
+There are over 20 attributes that can be applied to a text box. 
 These "style attributes" correspond to TSS -- KitchenWare's
 text-mode version of CSS. 
 
