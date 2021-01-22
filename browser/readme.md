@@ -1,14 +1,17 @@
 <h1 align="center">🗂 – 🌐 – Browser Tools - 🌐 - 🗂</h1>
 
-Some tools to consider / plan
+The plan:
   
- - ☐ ⏰ terminal events
-   - set up "react" object.
-   - map functions to react to terminal events.    
+ - ☐ Get TTML file, to load on screen.
+   
+ - ☐ Use XK to parse the TTML. 
+     Get all resource link urls.
+     
+ - ☐ Resolve links with "@/" to "/ktty/".
+   
+ - ☐ Set up reactions object -- see terminal events.  
     
- - ☐ 🗂 local file getter. 
-   - resolve "~/" files in ttml n css.
-   - check filetype
+
 
 - ☐ 🌐 browser 
    - load an initial page.
