@@ -21,6 +21,47 @@ function part_1() {
 
     /**  "  --==  Styling text with ANSI  ==--  "  */
 
+    var title  = new Ribbon();
+    about     += ktty.inline({
+        text: "Styling text with ANSI",
+	font_weight: "bold"
+    });
+    about     += "  ==--\n\n";
+
+
+
+    /**  "  This section of tests will apply * inline styling * to the
+	    text, using the method *ktty.inline( config )*;              **/
+
+    about     += "  This section of tests will apply";
+    about     += ktty.inline({
+	text:        " ANSI codes",
+	color:       "magenta",
+	font_weight: "bold"
+    });
+    about     += " to the \ntext, using the method ";
+    about     += ktty.inline({
+	text:        " ktty.inline_style( config )",
+	color:       "cyan",
+	font_weight: "bold"
+    });
+    about     += ";\n\n";
+
+
+
+    /**  List ANSI tests...    */
+    
+    about     += "  ANSI style options include:\n\n"
+    about     += " 1. text:    <string>\n";
+    about     += " 2. color:           `<color-name>` | \"rgb(`<0-255>`,`<0-255>`, `<0-255>`)\"\n";
+    about     += " 3. background:      `<color-name>` | \"rgb(`<0-255>`,`<0-255>`, `<0-255>`)\"\n";
+    about     += " 4. brightness:      \"normal\" | \"dim\"\n";
+    about     += " 5. font-weight:     \"normal\" | \"bold\"\n";
+    about     += " 6. text-decoration: \"normal\" | \"underlined\"\n";
+    about     += " 7. reverse-video:   \"yes-please\" | \"no-thanks\"\n\n";
+    
+    console.log( about );
+
 }
 
 
