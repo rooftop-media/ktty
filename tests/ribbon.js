@@ -10,8 +10,6 @@ var KTTY = require ( __dirname + "/../ktty.js" );
 /**  make a new ktty.             */
 var ktty = new KTTY();
 
-/**  Track test section.          */
-var current_section = 0;
 
 
 
@@ -23,8 +21,8 @@ function part_1() {
 
     /**  "  --==  Styling text with ANSI  ==--  "  */
 
-    var about  = "\n\n  --==  ";
-    about     += ktty.ansi({
+    var title  = new Ribbon();
+    about     += ktty.inline({
         text: "Styling text with ANSI",
 	font_weight: "bold"
     });
@@ -36,13 +34,13 @@ function part_1() {
 	    text, using the method *ktty.inline( config )*;              **/
 
     about     += "  This section of tests will apply";
-    about     += ktty.ansi({
+    about     += ktty.inline({
 	text:        " ANSI codes",
 	color:       "magenta",
 	font_weight: "bold"
     });
     about     += " to the \ntext, using the method ";
-    about     += ktty.ansi({
+    about     += ktty.inline({
 	text:        " ktty.inline_style( config )",
 	color:       "cyan",
 	font_weight: "bold"
@@ -62,8 +60,6 @@ function part_1() {
     about     += " 6. text-decoration: \"normal\" | \"underlined\"\n";
     about     += " 7. reverse-video:   \"yes-please\" | \"no-thanks\"\n\n";
     
-    about     += ktty.ansi("brightness", "normal");
-
     console.log( about );
 
 }

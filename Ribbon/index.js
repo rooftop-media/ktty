@@ -2,6 +2,7 @@
 
 //  Import methods...
 
+
 //  ☞  ...from /Ribbon/inline/
 
 /**  inline  -  Apply ANSI codes around some string.   */
@@ -16,8 +17,8 @@ var _box                    = require( __dirname + "/Ribbon/box/index.js" );
 
 //  ☞  ...from /Ribbon/frame/
 
-/**  frame  -  Apply any frame style to a string.    */
-var _frame                 = require( __dirname + "/Ribbon/frame/index.js" );
+/**  frame   -  Apply any frame style to a string.    */
+var _frame                  = require( __dirname + "/Ribbon/frame/index.js" );
 
 
 //  ☞  ...from /Ribbon/display/
@@ -28,13 +29,22 @@ var _frame                 = require( __dirname + "/Ribbon/frame/index.js" );
 module.exports = class Ribbon {
 
     /**  Making a new string....         */
-    constructor() {
-	this.text   = "";	
+    constructor( config ) {
+
+	this.text   = config.text;
+
+	this.style  = {
+	    display: config.display,
+	    
+	}
     }
 
-    /**  Load in new text.  Exciting!    */
+    
+    //  Load in new text.  Exciting!
+
     load_text( _text ) {
-	this.text = _text
+	this.text = _text;
+	
     }
 
     //  Apply certain sections of formatting:

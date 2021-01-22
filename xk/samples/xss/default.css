@@ -1,0 +1,14 @@
+a {
+  text-decoration: underline;
+  color: blue;
+}
+
+b {
+  font-weight: bold;
+}
+
+.special {
+  background: white;
+  color: black;
+  text-decoration: underline;
+}
