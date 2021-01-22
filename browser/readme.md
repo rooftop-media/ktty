@@ -10,7 +10,8 @@ Some tools to consider / plan
    - check filetype
 
 - ☐ 🌐 browser 
-   - navigable pages w links
+   - load an initial page.
+   - navigable pages w links.
    
 //
 
