@@ -26,7 +26,7 @@ Here's an index of KTTY's source code:
 | 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                    | All of KTTY's functions, bundled n exported! 🚢       |
 | 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon</a>.      | Style & format text.                                  |
 | 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen</a>.        | Parse XML & XSS strings.                              |
-| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser</a>.    | ...                                                   |
+| 🗂 `/ktty/browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser</a>.    | T                                                     |
 | 🗂 `/ktty/tests/*`           | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 TestLab</a>.       | Test and demo KTTY's features.                        |
 
 Each folder has its own README, with more details on that section.  Click the links to check 'em out. 
