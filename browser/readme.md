@@ -7,6 +7,8 @@ Some tools to consider / plan
  - ☐ local file getter. 
  
  - ☐ TTML render system. 
+   - navigable pages w links
+   - inter-net style 
 
  - ☐ http
    - http request tools
