@@ -50,19 +50,22 @@ var ktty    = new KTTY();
 
 How to set up Ribbon...
 ```
-/**  1.  Make a "CSS-like" config object.      */
+/**  1.  Import Ribbon.                        */ 
+var Ribbon    = require("Ribbon");
+
+/**  2.  Make an instance, add text.           */
+var ribbon    = new Ribbon();
+ribbon.add_text("Hello world!");
+
+/**  3.  Make a css-like style config.         */
 var config  = {
-  text:       "Hello world!",
   color:      "magenta",
   width:      "100vw",
   text_align: "center"
 }
 
-/**  2.  Create text with Ribbon.              */
-var my_text = ktty.Ribbon( config );
-
-//  Check the Ribbon docs for how to use yr Ribbon. 
-
+/**  4.  Apply the styles.              */
+var my_text = ribbon.style( config );
 ```
 <br /><br />
 
