@@ -48,8 +48,7 @@ var ktty    = new KTTY();
 <br /><br />
 
 
-
-You can access Ribbon through...
+How to set up Ribbon...
 ```
 /**  1.  Make a "CSS-like" config object.      */
 var config  = {
