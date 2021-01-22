@@ -21,12 +21,12 @@
 kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
 Here's an index of KTTY's source code:     
-| Folder                       | Name                                                                                 | Description
+| Folder                       | Name                                                                                 | Description                                           |
 |------------------------------|--------------------------------------------------------------------------------------|-------------------------------------------------------|
 | 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                    | All of KTTY's functions, bundled n exported! 🚢       |
-| 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon </a>.     | Style & format text.                                  |
-| 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen </a>.       | Parse XML & XSS strings.                              |
-| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser </a>.   | ...                                                   |
+| 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ktty/tree/main/Ribbon">🎀 Ribbon</a>.      | Style & format text.                                  |
+| 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen</a>.        | Parse XML & XSS strings.                              |
+| 🗂 `/ktty/Browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/Browser">🌐 Browser</a>.    | ...                                                   |
 | 🗂 `/ktty/tests/*`           | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 TestLab</a>.       | Test and demo KTTY's features.                        |
 
 Each folder has its own README, with more details on that section.  Click the links to check 'em out. 
