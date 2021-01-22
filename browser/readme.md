@@ -14,11 +14,40 @@ Some tools to consider / plan
    - load an initial page.
    - navigable pages w links.
    
-//
-
- - ☐ 🏓 web server
-
-   
- t- ☐ 💌 email client manager. 
+ <br /><br /><br /><br />
 
 
+
+
+
+<h4 align="center" id="events">⏰ terminal events.</h4>
+
+ - keyboard events:
+   - enter
+   - arrow keys
+   - backspace
+   - text
+ - scroll
+ - window size
+ - mouse stuff (?)
+ 
+ - data changes
+ - pings
+ - streams
+ 
+ <br /><br />
+ 
+ 
+ 
+ <h4 align="center" id="events">🗂 local file getter.</h4>
+
+Resolve file names, get contents. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
