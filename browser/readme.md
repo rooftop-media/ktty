@@ -2,8 +2,9 @@
 
 Some tools to consider / plan
   
- - ☐ ⏰ terminal event mapper
-   - react to terminal events.    
+ - ☐ ⏰ terminal events
+   - set up "react" object.
+   - map functions to react to terminal events.    
     
  - ☐ 🗂 local file getter. 
    - resolve "~/" files in ttml n css.
