@@ -16,8 +16,11 @@
 <h2 align="center"> 🎀  - KTTY's Ribbon class - 🎀</h2>
 
 <h4>🎀 📖 About Ribbon </h4>
-`Ribbon` is a datatype -- like a number, or a string, but with
-more options, including styling & formatting. 
+
+KTTY can make text pretty using a **Ribbon**.
+
+A Ribbon is a custom datatype -- like a number, or a string, but with
+more options, including styling & formatting.  
 
 Ribbons have:
  - Text content
@@ -29,14 +32,20 @@ Ribbons have:
 
 <h4>🎀 ⚙️ How it works </h4>
 
-Ribbons can be rendered in **four ways**, 
-each of which vaguely build on each other. 
+Ribbons have over 20 style attributes that can be applied.  
+These "style attributes" correspond to TSS -- KitchenWare's
+text-mode version of CSS. 
 
-Click a section name to jump to its description. 
+The style attributes have been organized into 4 categories.
+The categories are organized by their sequence in the Ribbon
+styling process.
+
+These 4 Ribbon styling categories are described below.
+Click on a category name to jump to its section in this readme. 
 
 <br />
 
-1. 📝 <a href="#inline">ANSI text styling</a> which includes:
+1. 📝 <a href="#inline">Inline text styling</a> which includes:
    - Get color codes compatible with your terminal. 
    - Get codes to change text color & text background color. 
    - Get codes to style text -- bold, underline, dim, reverse-video, etc. 
