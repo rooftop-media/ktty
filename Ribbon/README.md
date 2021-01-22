@@ -87,7 +87,7 @@ Click on a category name to jump to its section in this readme.
 <!----                                 ---->
 <!--   SECTION 1: Inline text styling.   -->
 <!----                                 ---->
-<h4 id="inline" align="center"> 1. 📝  Inline text styling functions: </h4>
+<h4 id="inline" align="center"> 1. 📝  Inline text styling: </h4>
 
 The inline section applies <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors" target="_blank">ANSI escape codes</a> 
 around text, to change the text's display settings -- text color, bold, dim, etc. 
@@ -155,9 +155,9 @@ The "config" passed in has these attributes:
 
 
 <!----                                ---->
-<!--   SECTION 2: ANSI Text Functions   -->
+<!--   SECTION 2: Box Text Formatting   -->
 <!----                                ---->
-<h2 id="inline" align="center"> 2. 📝  Inline text formatting functions: </h2>
+<h2 id="inline" align="center"> 2. 📦  Box text formatting: </h2>
 
 The tables below list methods in the folder `/ktty/methods/inline/`. 
 
@@ -293,14 +293,16 @@ var wrapped_string = ktty.wrap( wrap_config );
 
 
 
+<!----                                ---->
+<!--   SECTION 3: Box Text Formatting   -->
+<!----                                ---->
+<h2 id="box" align="center"> 3. 🖼  Frames for box models...</h2>
 
-<h2 id="box" align="center"> 2. 📦  Box text formatting...</h2>
+The table below lists methods in the folder `/ktty/methods/frame/`. 
 
-The table below lists methods in the folder `/ktty/methods/box/`. 
+The `/frame/` folder's functions all take a text string, and styling config options.
 
-The `/box/` folder's functions all take a text string, and styling config options.
-
-In the folder 🗂 ktty/methods/box/
+In the folder 🗂 ktty/methods/frame/
 | Method File      | Method Name                                                     | Description                                                      |
 |------------------|-----------------------------------------------------------------|------------------------------------------------------------------|
 | 📄 style.js.     | <a href="#box-style">`box_style( config )`</a>                  | Apply all styling in order, to make a text box!                  | 
