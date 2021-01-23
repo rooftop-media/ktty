@@ -46,6 +46,7 @@ var ktty    = new KTTY();
 
 
 <h4> 🎀  - How to use Ribbon...</h4>
+
 ```
 /**  1.  Import Ribbon.                        */ 
 var Ribbon    = require("Ribbon");
@@ -61,7 +62,7 @@ var config  = {
   text_align: "center"
 }
 
-/**  4.  Apply the styles.              */
+/**  4.  Apply the styles.                     */
 var my_text = ribbon.style( config );
 ```
 <br /><br />
@@ -69,6 +70,7 @@ var my_text = ribbon.style( config );
 
 
 <h4> 🔪  - How to use XK...</h4>
+
 ```
 /**  1.  Create a new xKitchen.                */
 var my_xk   = ktty.xk();
@@ -85,6 +87,7 @@ my_xk.load_xss( 'b { color: "magenta"; font-weight: "bold"; }' );
 
 
 <h4> 🔪  - How to use the ktty terminal browser...</h4>
+
 ```
 /**  1.  Create a new KTTY Browser.                */
 var browser   = ktty.browser();
