@@ -37,9 +37,6 @@ Each folder has its own README, with more details on that section.  Click the li
 
 <h4> 🐯  - How to use KTTY...</h4>
 
-<br />
-
-How to import KTTY:
 ```
 //  Import KTTY like this. 
 var KTTY    = require("ktty");
@@ -48,7 +45,7 @@ var ktty    = new KTTY();
 <br /><br />
 
 
-How to set up Ribbon...
+<h4> 🎀  - How to use Ribbon...</h4>
 ```
 /**  1.  Import Ribbon.                        */ 
 var Ribbon    = require("Ribbon");
@@ -71,7 +68,7 @@ var my_text = ribbon.style( config );
 
 
 
-How to use xKitchen to parse your xml and xss...
+<h4> 🔪  - How to use XK...</h4>
 ```
 /**  1.  Create a new xKitchen.                */
 var my_xk   = ktty.xk();
@@ -87,7 +84,7 @@ my_xk.load_xss( 'b { color: "magenta"; font-weight: "bold"; }' );
 
 
 
-How to use the Browser to load TTML & TSS...
+<h4> 🔪  - How to use the ktty terminal browser...</h4>
 ```
 /**  1.  Create a new KTTY Browser.                */
 var browser   = ktty.browser();
