@@ -121,9 +121,9 @@ Defining some relevant technical terms.
 
 The table bel is a glossary index.  Click
 
-| Term             | Definition                                | Wikipedia     |
-|------------------|-------------------------------------------|---------------|
-| Text terminal    | Any text
+| Term             | Definition                                     | Wikipedia     |
+|------------------|------------------------------------------------|---------------|
+| Text terminal    | A screen that displays text-graphics only.     | <a href="https://en.wikipedia.org/wiki/Computer_terminal#Text_terminals" target="_blank">Link</a> |
 
 <br /><br /><br /><br /><br />
 
