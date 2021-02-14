@@ -16,7 +16,7 @@
 
 
 
-<h2 align="center"> 🐯  - About kTTY... - 🐯</h2>
+<h2> 🐯 About kTTY...</h2>
 
 Ktty is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
@@ -40,7 +40,7 @@ Here are the ***differences*** between Ktty and web browsers:
 | Runs in your OS' GUI.                                     | Runs in a terminal emulator, on your OS.                          |
 | Turns HTML & CSS into multimedia pages.                   | Turns TTML & TSS into monospace text pages.                       |
 | Gets pages from HTTP requests to web servers.             | Gets pages locally, or from a KW server.                          |
-| Can't access computer files. *(for security!)*            | *Can* access your computer files. *(Trade-off: No http. )*        |
+| Can't access computer files. *(for security!)*            | *Can* access your computer files. *(Trade-off: No http! )*        |
 
 <br/><br/>
 
