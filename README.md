@@ -18,31 +18,43 @@
 
 <h2 align="center"> 🐯  - About kTTY... - 🐯</h2>
 
-kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
+Ktty is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
-<br/>
-
-kTTy works just like a browser:
- - Runs on JS system.
- - Has an object exposing the containing [Window](https://www.w3schools.com/js/js_window.asp) details.
- - Has an object exposing the document, as an object model -- the [DOM](https://www.w3schools.com/js/js_htmldom.asp).
 
 
 <br/><br/><br/><br/>
 
-<h3> Dependencies...</h3>
 
-| Folder                       | Name                                                                                 | Description                                           |
-|------------------------------|--------------------------------------------------------------------------------------|-------------------------------------------------------|
-| 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                    | All of KTTY's functions, bundled n exported! 🚢       |
-| 🗂 `/ktty/Ribbon/*`          | <a href="https://github.com/rooftop-media/ribbon" target="_blank">🎀 Ribbon</a>.     | Style & format text.                                  |
-| 🗂 `/ktty/xk/*`              | <a href="https://github.com/rooftop-media/ktty/tree/main/xk">🔪 xKitchen</a>.        | Parse XML & XSS strings.                              |
-| 🗂 `/ktty/browser/*`         | <a href="https://github.com/rooftop-media/ktty/tree/main/browser">🌐 Browser</a>.    | T                                                     |
-| 🗂 `/ktty/tests/*`           | <a href="https://github.com/rooftop-media/ktty/tree/main/Labs">🧪 TestLab</a>.       | Test and demo KTTY's features.                        |
+<h3> Comparison to web browsers...  </h3>
 
-Each folder has its own README, with more details on that section.  Click the links to check 'em out. 
+Ktty works a lot like a [web browser](https://en.wikipedia.org/wiki/Web_browser), like Chrome, Safari, or Firefox.   
 
-<br /><br />
+<br/>
+
+Here are the *differences* between Ktty and web browsers:
+
+| Web Browsers *Chrome, safari, firefox, etc.*              | kTTY                                                              |
+|-----------------------------------------------------------|-------------------------------------------------------------------|
+| Runs on your OS' desktop GUI.                             | Runs in a terminal emulator, on your OS.                          |
+| Turns HTML & CSS into multimedia pages.                   | Turns TTML & TSS into monospace text pages.                       |
+| Gets pages from HTTP requests to web servers.             | Gets pages locally, or from a KW server.                          |
+| Can't access computer files. *(for security!)*            | *Can* access your computer files. *(Trade-off: No http. )*        |
+
+<br/><br/>
+
+Here are the *similarities* between Ktty and web browsers:
+
+ - Both can create interactive pages with JavaScript.  
+ 
+ - Both have a built-in [`Window`](https://www.w3schools.com/js/js_window.asp) JS object,
+   for getting details about the screen size, history, etc.
+ 
+ - Both have a built-in [`Document`](https://www.w3schools.com/js/js_htmldom.asp) JS object,
+   for writing scripts that interact with the page's elements.
+
+
+<br/><br/><br/><br/>
+
 
 
 
@@ -55,58 +67,6 @@ var ktty    = new KTTY();
 ```
 <br /><br />
 
-
-<h4> 🎀  - How to use Ribbon...</h4>
-
-```
-/**  1.  Import Ribbon.                        */ 
-var Ribbon    = require("Ribbon");
-
-/**  2.  Make an instance, add text.           */
-var ribbon    = new Ribbon();
-ribbon.add_text("Hello world!");
-
-/**  3.  Make a css-like style config.         */
-var config  = {
-  color:      "magenta",
-  width:      "100vw",
-  text_align: "center"
-}
-
-/**  4.  Apply the styles.                     */
-var my_text = ribbon.style( config );
-```
-<br /><br />
-
-
-
-<h4> 🔪  - How to use XK...</h4>
-
-```
-/**  1.  Create a new xKitchen.                */
-var my_xk   = ktty.xk();
-
-/**  2.  Load in XML and XSS.                  */
-my_xk.load_xml( "<div> Hello! <b>Welcome.</b> </div>" );
-my_xk.load_xss( 'b { color: "magenta"; font-weight: "bold"; }' );
-
-//  Check the xKitchen docs for how to use yr xkitchen. 
-
-```
-<br /><br />
-
-
-
-<h4> 🔪  - How to use the ktty terminal browser...</h4>
-
-```
-/**  1.  Create a new KTTY Browser.                */
-var browser   = ktty.browser();
-
-
-
-```
-<br /><br />
 
 
 
