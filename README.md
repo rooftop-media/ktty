@@ -20,7 +20,18 @@
 
 kTTY is JS tools for making nice UIs in <a href="#text-terminals">text terminals</a>.  
 
-Here's an index of KTTY's source code:     
+<br/>
+
+kTTy works just like a browser:
+ - Runs on JS system.
+ - Has an object exposing the containing [Window](https://www.w3schools.com/js/js_window.asp) details.
+ - Has an object exposing the document, as an object model -- the [DOM](https://www.w3schools.com/js/js_htmldom.asp).
+
+
+<br/><br/><br/><br/>
+
+<h3> Dependencies...</h3>
+
 | Folder                       | Name                                                                                 | Description                                           |
 |------------------------------|--------------------------------------------------------------------------------------|-------------------------------------------------------|
 | 📄 `/ktty/ktty.js`           | The ktty.js file.                                                                    | All of KTTY's functions, bundled n exported! 🚢       |
