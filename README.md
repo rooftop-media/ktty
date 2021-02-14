@@ -29,20 +29,22 @@ Ktty is JS tools for making nice UIs in <a href="#text-terminals">text terminals
 
 Ktty works a lot like a [web browser](https://en.wikipedia.org/wiki/Web_browser), like Chrome, Safari, or Firefox.   
 
+<br/><br/>
+
+Here are the ***differences*** between Ktty and web browsers:
+
 <br/>
 
-Here are the *differences* between Ktty and web browsers:
-
-| Web Browsers *Chrome, safari, firefox, etc.*              | kTTY                                                              |
+| Web Browsers                                              | kTTY                                                              |
 |-----------------------------------------------------------|-------------------------------------------------------------------|
-| Runs on your OS' desktop GUI.                             | Runs in a terminal emulator, on your OS.                          |
+| Runs in your OS' GUI.                                     | Runs in a terminal emulator, on your OS.                          |
 | Turns HTML & CSS into multimedia pages.                   | Turns TTML & TSS into monospace text pages.                       |
 | Gets pages from HTTP requests to web servers.             | Gets pages locally, or from a KW server.                          |
 | Can't access computer files. *(for security!)*            | *Can* access your computer files. *(Trade-off: No http. )*        |
 
 <br/><br/>
 
-Here are the *similarities* between Ktty and web browsers:
+Here are the ***similarities*** between Ktty and web browsers:
 
  - Both can create interactive pages with JavaScript.  
  
