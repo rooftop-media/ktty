@@ -1,44 +1,49 @@
-/*  kTTY  -      */
+#!/usr/bin/env node
+    ;
+/*  kTTY  -      
 
   //      _                ___       _.--.
-  //      \`.|\..----...-'`   `-._.-'_.-'`               This file bundles all of KTTY's features. 
-  //      /  ' `         ,       __.--'	   
+  //      \`.|\..----...-'`   `-._.-' .-'`               Run this file to open kTTY!
+  //      /  ' `         ,       __.--'	                 (Takes a filepath as an argument.)
   //      )/' _/     \   `-_,   /
   //      `-'" `"\_  ,_.-;_.-\_ ',                       Art pasted from ascii-art.de/ascii/c/cat.txt 
   //          _.-'_./   {_.'   ; /   fsc/as
   //        {_.-``-'         {_/
 
+*/
 
-/**  Import the Ribbon class.     .  */
-var Ribbon                  = require( __dirname + "/Ribbon/index.js" );
 
-/**  Import the xKitchen class.      */
-// var XK                      = require( __dirname + "/xk/xkitchen.js" );
+//  Importing NodeJS libraries.
+var process  = require("process");
+var fs       = require("fs");
 
-                                        //     |\      _,,,---,,_
-                                        //     /,`.-'`'    -.  ;-;;,_
-//  The KTTY class.                     //    |,4-  ) )-,_..;\ (  `'-'
-module.exports = class KTTY {           //   L'---''(_/--'  `-'\_)  fL
-    
-    //  constructor      --  Starting a KTTY session...
-    
-    constructor() {
-	
-    }
+//  The function to start ktty!
+function main() {
 
-    //  Getting a ribbon:
+    //  Getting the file contents.
+    var file_name = process.argv[2];
+    var contents  = get_file(file_name);
+    console.log("File: " + file_name);
+    console.log("Contents:" + contents);
 
-    ribbon( config ) {
-	return new Ribbon( config );
-    }
+}
 
-    //  Getting an XK:
+main();
 
-    xk() {
-	return new XK();
+//  Sub function, to get file contents.
+function get_file( file_name ) {
+
+    if ( file_name == undefined) {
+	return "No file name found";
+    } else {
+	return fs.readFileSync( file_name );
     }
 
 }
+
+
+
+
 
 
 /*

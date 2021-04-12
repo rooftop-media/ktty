@@ -1,0 +1,22 @@
+{
+  "name": "@rooftop-media/ktty",
+  "version": "1.0.0",
+  "description": "kitchenware terminal toolkit",
+  "main": "ktty.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ktty": "ktty.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rooftop-media/ktty.git"
+  },
+  "author": "benh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rooftop-media/ktty/issues"
+  },
+  "homepage": "https://github.com/rooftop-media/ktty#readme"
+}
