@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-    ;
+;
+
 /*  kTTY  -      
 
   //      _                ___       _.--.
@@ -13,34 +14,56 @@
 */
 
 
+
 //  Importing NodeJS libraries.
 var process  = require("process");
 var fs       = require("fs");
+var path     = require("path");
 
-//  The function to start ktty!
+
+//  Setting up app memory.
+var _buffer   = "";
+var _filename = "";
+var _filetype = "";
+
+
+//  The boot sequence.
 function main() {
 
     //  Getting the file contents.
-    var file_name = process.argv[2];
-    var contents  = get_file(file_name);
-    console.log("File: " + file_name);
-    console.log("Contents:" + contents);
-
-}
-
-main();
-
-//  Sub function, to get file contents.
-function get_file( file_name ) {
-
-    if ( file_name == undefined) {
-	return "No file name found";
+    _filename = process.argv[2];
+    
+    if ( _filename == undefined ) {
+	_buffer = "No file name found";
     } else {
-	return fs.readFileSync( file_name );
+	_buffer = fs.readFileSync( _filename, {encoding: 'utf8'} );
     }
+    console.clear();
+    console.log(_buffer);
+
+
+    //  Getting the file's settings. 
+    _filetype   = path.extname( _filename );
+    console.log(_filetype);
+
+    
+    //  Map keyboard input.
+    var stdin = process.stdin;
+    stdin.setRawMode( true );
+    stdin.resume();
+    stdin.setEncoding( 'utf8' );
+    stdin.on( 'data', function( key ){
+
+	    //  For ctrl-c, end program.
+	    if ( key === '\u0003' ) {
+		process.exit();
+	    }
+	    //  For other text:
+	    process.stdout.write( key );
+	});
 
 }
-
+main();
 
 
 
