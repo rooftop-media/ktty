@@ -1,0 +1,25 @@
+{
+	"filetype_settings": {
+
+		"txt":  	"plaintext",
+		"":		"plaintext",
+		"plaintext":    {
+			     	"mode":         "text-edit",
+	  		     	"highlighting": {},
+			     	"spellcheck":   {},
+			     	"autocomplete": {},
+			     	"hotkeys":      {},
+			     	},
+			     
+		"html":         "xml",
+		"ttml":		"xml",
+		"xml":  	{
+				"mode":	        "text-edit",
+				"highlighting": {},
+				"spellcheck":   {},
+				"autocomplete": {},
+				"hotkeys":      {},
+				}        
+
+	}
+}
