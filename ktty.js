@@ -14,7 +14,8 @@
 */
 
 
-////  SECTION 1:  Imports & global variables.
+
+////  SECTION 1:  Imports.
 
 //  Importing NodeJS libraries.
 var process      = require("process");
@@ -22,36 +23,47 @@ var fs           = require("fs");
 var path         = require("path");
 
 
+
+////  SECTION 2:  APP MEMORY
+
 //  Setting up app memory.
-var _buffer      = "";     //  The text being edited.
-var _filename    = "";     //  Filename - including extension.
-var _modified    = false;  //  Has the buffer been modified?
+var _buffer      = "";        //  The text being edited.
+var _filename    = "";        //  Filename - including extension.
+var _modified    = false;     //  Has the buffer been modified?
 
-var _window_h    = 0;      //  Window height in text chars.
-var _window_w    = 0;      //  Window width in text chars.
+var _cursor_buffer_pos  = 0;  //  The cursor's position in the buffer text.
+var _cursor_distance    = 0;  //  The cursor's distance from the left of the window. 
 
-var _cursor_line = 1;      //  # of spaces from the top of the doc.
-var _cursor_char = 1;      //  # of spaces from the left of this line.
+var _window_h    = 0;         //  Window height (in text char's).
+var _window_w    = 0;         //  Window width (in text char's).
 
+var _edit_history = [];       //  A list of edit notation marks.
+var _scroll      = 0;         //  Scroll distance.
+
+
+
+////  SECTION 3:  EVENTS
+
+//  These functions fire in response to "events" like keyboard input.
 var _events      = {
     "UP":     function() {
-	if ( _cursor_line > 1 ) { _cursor_line--; }
+
     },
     "DOWN":   function() {
-	_cursor_line++;
+
     },
     "LEFT":   function() {
-	if ( _cursor_char > 1 ) { _cursor_char--; }
+	
     },
     "RIGHT":  function() {
-	_cursor_char++;
+
     },
     "TEXT":   function(key) {},
 }
 
 
 
-////  SECTION 2:  Boot stuff.
+////  SECTION 4:  Boot stuff.
 
 //  The boot sequence.
 function boot() {
@@ -126,7 +138,7 @@ function map_input() {
 }
 
 
-////  SECTION 3:  Draw functions.
+////  SECTION 5:  DRAW FUNCTIONS
 
 //  The draw function -- called after any data change.
 function draw() {
@@ -145,28 +157,53 @@ function draw_buffer() {
 
 //  Drawing the file's status bar -- filename, modified status, and cursor position. 
 function draw_status_bar() {
+    
     process.stdout.write("\x1b[" + (_window_h - 2) + ";0H");   /**  Moving to the 2nd to bottom row.  **/
-    process.stdout.write("\x1b[7m");                         /**  Reverse video.                    **/
-    var status_bar_text = "  " + _filename;
-    if (_modified) {
+    
+    process.stdout.write("\x1b[7m");                           /**  Reverse video.                    **/
+    
+    var status_bar_text = "  " + _filename;                    /**  Add the filename                  **/
+    if (_modified) {                                           /**  Add the [modified] indicator.     **/
 	status_bar_text += "     [modified]";
     } else {
 	status_bar_text += "               ";
     }
-    status_bar_text += "  cursor on line " + _cursor_line + ", row " + _cursor_char;
-    while (status_bar_text.length < _window_w) {    /**  Padding it with whitespace.       **/
+    
+    var cursor_position = a_get_cursor_pos();                  /**  Use algorithm a_get_cursor_pos!   **/
+    status_bar_text += "  cursor on line " + cursor_position[0];
+    status_bar_text += ", row " + cursor_position[1];
+    
+    while (status_bar_text.length < _window_w) {               /**  Padding it with whitespace.       **/
 	status_bar_text += " ";
     }
-    process.stdout.write(status_bar_text);
-    process.stdout.write("\x1b[0m");                         /**  No more reverse video.            **/
+
+    process.stdout.write(status_bar_text);                     /**  Output the status bar string.     **/
+    process.stdout.write("\x1b[0m");                           /**  No more reverse video.            **/
 }
 
 //  Move the cursor to its position in the buffer.
 function position_cursor() {
-    process.stdout.write("\x1b[" + _cursor_line + ";" + _cursor_char + "f");  
+    var cursor_position = a_get_cursor_pos(); //  a_get_cursor_pos is an algorithm, defined below
+    process.stdout.write("\x1b[" + cursor_position[0] + ";" + cursor_position[1] + "f");  
 }
 
     
+
+
+////  SECTION 6:  ALGORITHMS
+
+function a_get_cursor_pos() {   //  Returns a 2 index array, [int line, int char]
+    var cursor_position = [1,1];
+    for (var i = 0; i < _cursor_buffer_pos; i++) {  //  Loop through the buffer to count the \n's! :)
+	var current = _buffer[i];
+	if (current == "\n") {
+	    cursor_position[0]++;  /**  Advance a line.        **/
+	} else {
+	    cursor_position[1]++   /**  Advance a character.   **/
+	}
+    }
+    return cursor_position;
+}
 
 
 
