@@ -53,10 +53,10 @@ var _events      = {
 
     },
     "LEFT":   function() {
-	
+   	b_move_by_char(-1); 
     },
     "RIGHT":  function() {
-
+	b_move_by_char(1); 
     },
     "TEXT":   function(key) {},
 }
@@ -192,20 +192,33 @@ function position_cursor() {
 
 ////  SECTION 6:  ALGORITHMS
 
-function a_get_cursor_pos() {   //  Returns a 2 index array, [int line, int char]
+function a_get_cursor_pos() {            //  Returns a 2 index array, [int line, int char]
     var cursor_position = [1,1];
     for (var i = 0; i < _cursor_buffer_pos; i++) {  //  Loop through the buffer to count the \n's! :)
 	var current = _buffer[i];
 	if (current == "\n") {
-	    cursor_position[0]++;  /**  Advance a line.        **/
+	    cursor_position[0]++;        /**  Advance a line.        **/
+	    cursor_position[1] = 0;      /**  Reset character pos.   **/
 	} else {
-	    cursor_position[1]++   /**  Advance a character.   **/
+	    cursor_position[1]++;        /**  Advance a character.   **/
 	}
     }
     return cursor_position;
 }
 
+function b_move_by_char( L_or_R ) {   //  Takes an int: -1 for L, 1 for R.
 
+    _cursor_buffer_pos += L_or_R;        /**   Move up or down, for left or right.                **/
+    
+    if ( _cursor_buffer_pos < 0 ) {      /**   If the cursor is negative, increment.              **/
+	_cursor_buffer_pos++;
+    }
+    
+    var buff_limit = _buffer.length;     /**   If the cursor is past the end of file, decrement.  **/
+    if ( _cursor_buffer_pos > buff_limit ) {
+	_cursor_buffer_pos--;
+    }
+}
 
 
 
