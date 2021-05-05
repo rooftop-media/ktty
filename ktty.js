@@ -62,11 +62,15 @@ var _events      = {
     },
     
     "TEXT":   function(key) {
-    
+	f_add_to_buffer(key);
     },
-    "DELETE": function() {
+    "ENTER":  function() {
+	f_add_to_buffer("\n");
+    },
+    "BACKSPACE": function() {
+	g_delete_from_buffer();
+    },
 
-    }
     
 }
 
@@ -136,6 +140,13 @@ function map_input() {
 	else if ( key === '\u001b[D' ) {     //  left
 	    _events["LEFT"]();
 	}
+	else if ( key === '\u000D' ) {     //  enter
+	    _events["ENTER"]();
+	}
+	else if ( key === '\u0008' || key === "\u007f" ) {     //  delete
+	    _events["BACKSPACE"]();
+	}
+
 	else {
 	    _events["TEXT"](key);
 	}
@@ -305,8 +316,19 @@ function e_move_cursor_down() {
 
 }
 
-function f_save_buffer_to_file() {
-    
+function f_add_to_buffer(new_text) {
+    var new_buffer = _buffer.slice(0, _cursor_buffer_pos);
+    new_buffer    += new_text;
+    new_buffer    += _buffer.slice(_cursor_buffer_pos, _buffer.length);
+    _buffer = new_buffer;
+    _cursor_buffer_pos++;
+}
+
+function g_delete_from_buffer() {
+    var new_buffer = _buffer.slice(0, _cursor_buffer_pos - 1);
+    new_buffer    += _buffer.slice(_cursor_buffer_pos, _buffer.length);
+    _buffer = new_buffer;
+    _cursor_buffer_pos--;
 }
 
 
