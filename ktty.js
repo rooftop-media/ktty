@@ -27,18 +27,18 @@ var path         = require("path");
 ////  SECTION 2:  APP MEMORY
 
 //  Setting up app memory.
-var _buffer      = "";        //  The text being edited.
-var _filename    = "";        //  Filename - including extension.
-var _modified    = false;     //  Has the buffer been modified?
+var _buffer       = "";        //  The text being edited.
+var _filename     = "";        //  Filename - including extension.
+var _modified     = false;     //  Has the buffer been modified?
+var _cursor_buffer_pos  = 0;   //  The cursor's position in the buffer text.
 
-var _cursor_buffer_pos  = 0;  //  The cursor's position in the buffer text.
-var _cursor_distance    = 0;  //  The cursor's distance from the left of the window. 
+var _feedback_bar = "";
 
-var _window_h    = 0;         //  Window height (in text char's).
-var _window_w    = 0;         //  Window width (in text char's).
+var _window_h     = 0;         //  Window height (in text char's).
+var _window_w     = 0;         //  Window width (in text char's).
 
-var _edit_history = [];       //  A list of edit notation marks.
-var _scroll      = 0;         //  Scroll distance.
+var _edit_history = [];        //  A list of edit notation marks.
+var _scroll       = 0;         //  Scroll distance.
 
 
 
@@ -124,10 +124,12 @@ function map_input() {
     stdin.setEncoding( 'utf8' );
     stdin.on( 'data', function( key ){    
 
-	if ( key === '\u0003' ) {	     //  For ctrl-c, end program.
-	    process.exit();
+	if ( key === '\u0003' || key === '\u0018' ) {	     //  ctrl-c and ctrl-q
+	    j_quit();
 	}
-
+	else if ( key === '\u0013' ) {       // ctrl-s
+	    i_save_buffer_to_file();
+	}
 	else if ( key === '\u001b[A' ) {     //  up
 	    _events["UP"]();
 	}
@@ -164,6 +166,7 @@ function map_input() {
 function draw() {
     draw_buffer();
     draw_status_bar();
+    draw_feedback_bar();
     position_cursor();
 }
 
@@ -201,6 +204,15 @@ function draw_status_bar() {
     process.stdout.write("\x1b[0m");                           /**  No more reverse video.            **/
 }
 
+//  Drawing the feedback bar. 
+function draw_feedback_bar() {
+    process.stdout.write("\x1b[2m");                           /**  Dim text.                         **/
+    process.stdout.write("\x1b[" + (_window_h - 1) + ";0H");   /**  Moving to the bottom row.         **/
+    process.stdout.write(_feedback_bar);
+    _feedback_bar = "";
+    process.stdout.write("\x1b[0m");                           /**  Dim text.                         **/
+}
+
 //  Move the cursor to its position in the buffer.
 function position_cursor() {
     var cursor_position = a_get_cursor_pos(); //  a_get_cursor_pos is an algorithm, defined below
@@ -231,6 +243,8 @@ function b_move_cursor_left() {
     _cursor_buffer_pos -= 1;
     if ( _cursor_buffer_pos < 0 ) {      /**   Don't let the cursor position be negative.         **/
 	_cursor_buffer_pos++;
+    } else {
+	_feedback_bar = "Moved left.";
     }
 
 }
@@ -242,6 +256,8 @@ function c_move_cursor_right() {
     var buff_limit = _buffer.length;     /**   Don't let the cursor position exceed the buffer.   **/
     if ( _cursor_buffer_pos > buff_limit ) {
 	_cursor_buffer_pos--;
+    } else {
+	_feedback_bar = "Moved right.";
     }
 
 }
@@ -265,6 +281,8 @@ function d_move_cursor_up() {
     else if (prev_line_length <= current_x_pos) {  /**   If we're going up **above** a line...       **/
 	_cursor_buffer_pos -= current_x_pos;
     }
+
+    _feedback_bar = "Moved up.";
     
 }
 
@@ -312,6 +330,8 @@ function e_move_cursor_down() {
     var buff_limit = _buffer.length;     /**   Don't let the cursor position exceed the buffer.   **/
     if ( _cursor_buffer_pos > buff_limit ) {
 	_cursor_buffer_pos--;
+    } else {
+	_feedback_bar = "Moved down.";
     }
 
 }
@@ -322,6 +342,10 @@ function f_add_to_buffer(new_text) {
     new_buffer    += _buffer.slice(_cursor_buffer_pos, _buffer.length);
     _buffer = new_buffer;
     _cursor_buffer_pos++;
+    _feedback_bar = "Typed '" + new_text + "'";
+    if (!_modified) {
+	_modified = true;
+    }
 }
 
 function g_delete_from_buffer() {
@@ -329,9 +353,28 @@ function g_delete_from_buffer() {
     new_buffer    += _buffer.slice(_cursor_buffer_pos, _buffer.length);
     _buffer = new_buffer;
     _cursor_buffer_pos--;
+    _feedback_bar = "Text deleted.";
+    if (!_modified && _cursor_buffer_pos != 0) {
+	_modified = true;
+    }
 }
 
+function h_load_file_to_buffer() {
 
+}
+
+function i_save_buffer_to_file() {
+    
+    fs.writeFileSync(_filename, _buffer, { encoding: 'utf8' } );
+    _modified = false;
+    _feedback_bar = "saved :)";
+
+}
+
+function j_quit() {
+    console.clear();
+    process.exit();
+}
 
 
 
