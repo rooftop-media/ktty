@@ -13,12 +13,17 @@ var Buffer = {
     filename:    "",
     modified:    "",
     cursor_pos:  0,
+    scroll_pos:   0,
+    wrapped_text: "",
     
     focus:             Buffer_focus,
     load_file:         Buffer_load_file,
     get_cursor_coords: Buffer_get_cursor_coords,
     draw:              Buffer_draw,
     position_cursor:   Buffer_position_cursor,
+    get_wrapped_text:  Buffer_get_wrapped_text,
+    get_visible_chunk: Buffer_get_visible_chunk,
+    scroll:            Buffer_scroll,
 
     events:            {
         "CTRL-C":     function() {  Window.quit()  },
@@ -69,18 +74,45 @@ function Buffer_get_cursor_coords() {
     var cursor_coords = [1,1];
     for (var i = 0; i < this.cursor_pos; i++) {  //  Loop through the buffer to count \n's 
         var current = this.text[i];
-        if (current == "\n") {
+        if (current == "\n" || cursor_coords[1] >= Window.width - 1) {
             cursor_coords[0]++;        /**  Advance a line.        **/
             cursor_coords[1] = 1;      /**  Reset character pos.   **/
         } else {
             cursor_coords[1]++;        /**  Advance a character.   **/
         }
     }
-    return cursor_coords;
+
+    cursor_coords[0] -= Buffer.scroll_pos;
+    if (cursor_coords[0] <= 0) {
+        Buffer.scroll_pos--;
+	    return Buffer.get_cursor_coords();
+    } else if (cursor_coords[0] > Window.height - 5) {
+        Buffer.scroll_pos++;
+	    return Buffer.get_cursor_coords();
+    } else {
+    	return cursor_coords;
+    }
 }
 function Buffer_draw() {
+
     console.clear();
-    console.log(this.text);
+    var buff_lines = this.text.split("\n");
+    var overflow   = 1;
+
+    for (var i = 0; i < buff_lines.length; i++) {
+        var line = buff_lines[i];
+	
+        if (i >= this.scroll_pos && i < (Window.height + this.scroll_pos - overflow) ) {   /**  This IF statement ensures we draw the correct amount of lines!   **/
+	
+            while (line.length > Window.width) {                          /**  This WHILE loop breaks down any lines that overflow _window_w.   **/     
+                overflow++;
+                var line_part = line.slice(0, Window.width - 1);
+                console.log(line_part + "\x1b[2m\\\x1b[0m");              /**  Dim, add "\", undim   **/
+                line = line.slice(Window.width - 1, line.length);
+            }
+            console.log(line);
+        }
+    }
 }
 function Buffer_position_cursor() {
     var cursor_position = this.get_cursor_coords();
@@ -186,7 +218,7 @@ function Buffer_add_to_text(new_text) {
     }
 }
 function Buffer_delete_from_text() {
-    if ( Buffer.cursor_position == 0 ) {      /**   Don't let the cursor position be negative.    **/
+    if ( Buffer.cursor_pos == 0 ) {      /**   Don't let the cursor position be negative.    **/
         return;
     }
     var new_buffer = Buffer.text.slice(0, Buffer.cursor_pos - 1);
@@ -203,6 +235,29 @@ function Buffer_save_to_file() {
     Buffer.modified = false;
     FeedbackBar.text = "saved :)";
 }
+function Buffer_get_wrapped_text() {
+    var lines   = this.text.split("\n");
+    var wrapped = "";
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i];
+        while (line.length > Window.width) {
+	    wrapped += line.split(0,Window.width) + "\n";
+	    line     = line.split(Window.width, line.length);
+	}
+	wrapped += line + "\n";
+    }
+    this.wrapped_text = wrapped;
+}
+function Buffer_get_visible_chunk() {
+    var lines   = this.wrapped_text.split("\n");
+    for (var i = this.scroll_pos; i < this.scroll_pos + Window.height; i++) {
+    
+    }
+}
+function Buffer_scroll() {
+
+}
+
 
 var StatusBar = { 
     draw:   StatusBar_draw,
@@ -376,6 +431,7 @@ var Keyboard = {
       "\u001b[C": "RIGHT",
       "\u001b[D": "LEFT",
       "\u007f":   "BACKSPACE",
+      "\u0008":   "BACKSPACE",  /* For powershell */
       "\u000D":   "ENTER",
       "\u0003":   "CTRL-C",
       "\u0013":   "CTRL-S",
